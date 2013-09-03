@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,cyrillic-ext);
+
+html, body {
+	font-family: "Open Sans";
+	background-color: #373b47;
+	color : #989898;
+
+}
+
+h3 {
+	color : #ddd;
+	font-weight:  300;
+	font-size : 2em;
+}
+
+.graph
+{
+	clear: both;
+	display: block;
+	overflow: hidden;
+}
+
+.graph-label
+{
+	fill: #999;
+	font-size: 20px
+}
+
+
+.graph-rect:hover
+{
+	stroke: #4b4b4b;
+	stroke-width: 1px
+}
+
+.subdomain-text {
+	font-size: 16px;
+	fill: #444;
+	pointer-events: none;
+}
+
+.domain-background {
+	fill: none;
+	shape-rendering: crispedges;
+}
+
+
+.q0 { fill: #e81a74; }
+.q1 { fill: #dae289; }
+.q2 { fill: #f8689e; }
+.q3 { fill: #ffbdd6; }
+.q4 { fill: #e5e5e5; }
+.q5 { fill: #c4cce6; }
+.q6 { fill: #40bca9; }
+.q7 { fill: #16f4a8; }

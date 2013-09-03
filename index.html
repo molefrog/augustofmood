@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>August of Mood</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+		<script type="text/javascript" src="bower_components/cal-heatmap/cal-heatmap.min.js"></script>
+		<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+		<script type="text/javascript" src="bower_components/moment/moment.js"></script>
+
+		<center>		
+			<h3>August of Mood</h3>
+			<div id="cal-heatmap"></div>
+		</center>
+		
+		<script type="text/javascript">
+
+			var startDate = moment("2013-08-01");
+			var orig = [ +1, +2, -1, +1, +2, 0, 0, +1, 0, +1, 0, +1, +1, 0, +2, 0, +1, +2, 0, 0, 0, -1, 0, -1, 0, +1, -2, +2, 0, +1, +3];
+
+			var data = _(orig).chain()
+			.map(function(d, i) {
+				return [ moment(startDate).add("days", i).unix(),  d];
+			}).object().value();
+
+			var cal = new CalHeatMap();
+			cal.init({
+				legend : [-3, -2, -1, 0, 1, 2],
+				start : startDate.toDate(),
+				data : data,
+				domain : "month",
+				subDomain : "x_day",
+				cellSize : 50, 
+				cellRadius : 999,
+				cellPadding : 3,
+				subDomainTextFormat: "%d",
+				displayLegend : false,
+				range: 1,
+				domainLabelFormat : function() { return ""; }
+			});
+		</script>
+	</body>
+</html>
